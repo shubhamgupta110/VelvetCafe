@@ -1,0 +1,96 @@
+/* Velvet Bean Café – palette from BRD */
+:root {
+  --espresso: #4B2E2B;
+  --cream: #F5E6D3;
+  --caramel: #C68B59;
+  --sage: #7A8F6A;
+  --bg: #FFFAF3;
+  --bg-alt: #F5E6D3;
+  --card: #ffffff;
+  --text: #3a2522;
+}
+[data-bs-theme="dark"] {
+  --bg: #1d1412;
+  --bg-alt: #2a1d1a;
+  --card: #352622;
+  --text: #f1e4d4;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); }
+h1, h2, h3, h4, h5, .brand { font-family: 'Playfair Display', serif; }
+h2 { font-weight: 700; color: var(--espresso); margin-bottom: 1rem; }
+[data-bs-theme="dark"] h2 { color: var(--cream); }
+.section-alt { background: var(--bg-alt); }
+.text-muted { color: inherit !important; opacity: .75; }
+
+/* Navbar */
+.navbar { transition: background .3s, box-shadow .3s; padding: .9rem 0; }
+.navbar .brand, .navbar .nav-link, .navbar .btn-icon { color: #fff; }
+.navbar .brand { font-size: 1.6rem; font-weight: 700; }
+.navbar .nav-link:hover { color: var(--caramel); }
+.navbar.scrolled { background: var(--espresso); box-shadow: 0 2px 12px rgba(0,0,0,.25); padding: .5rem 0; }
+.navbar-toggler { border-color: rgba(255,255,255,.6); }
+.navbar-toggler-icon { filter: invert(1); }
+@media (max-width: 991.98px) {
+  .navbar-collapse { background: var(--espresso); padding: .5rem 1rem; margin-top: .5rem; border-radius: .75rem; }
+}
+.btn-icon { font-size: 1.3rem; border: 0; }
+.bg-caramel { background: var(--caramel) !important; }
+
+/* Buttons */
+.btn-caramel { background: var(--caramel); color: #fff; border: 0; }
+.btn-caramel:hover, .btn-caramel:focus { background: #b27846; color: #fff; }
+.btn:focus-visible, .form-control:focus { box-shadow: 0 0 0 .2rem rgba(198,139,89,.5); border-color: var(--caramel); }
+
+/* Hero */
+#home { position: relative; height: 100vh; min-height: 520px; }
+#home .carousel-inner, #home .carousel-item { height: 100%; }
+#home img { width: 100%; height: 100%; object-fit: cover; background: var(--espresso); }
+#home::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(40,22,20,.85), rgba(40,22,20,.25)); }
+.hero-text { position: absolute; z-index: 2; top: 50%; left: 8%; right: 8%; transform: translateY(-50%); color: #fff; max-width: 560px; }
+.hero-text h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); font-weight: 700; line-height: 1.1; }
+.hero-text .lead { margin: 1rem 0 1.5rem; font-weight: 300; }
+.carousel-control-prev, .carousel-control-next { z-index: 3; }
+
+/* About */
+.about-img { box-shadow: 0 14px 30px rgba(75,46,43,.25); background: var(--caramel); min-height: 240px; width: 100%; object-fit: cover; }
+.fact { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--caramel); font-weight: 700; }
+
+/* Filters + menu cards */
+.btn-filter { border: 1px solid var(--caramel); color: var(--caramel); border-radius: 50rem; padding: .4rem 1.2rem; }
+.btn-filter:hover, .btn-filter.active { background: var(--caramel); color: #fff; }
+.dish { background: var(--card); border: 0; border-radius: 1.25rem; box-shadow: 0 6px 18px rgba(75,46,43,.12); overflow: hidden; height: 100%; }
+.dish-top { font-size: 3.6rem; text-align: center; padding: 1.2rem 0; background: linear-gradient(135deg, var(--cream), #ecd2b4); }
+[data-bs-theme="dark"] .dish-top { background: linear-gradient(135deg, #4b362f, #3a2924); }
+.dish .tag { font-size: .75rem; color: var(--sage); font-weight: 500; }
+.dish .price { font-weight: 500; color: var(--caramel); font-size: 1.15rem; }
+.dish-in { animation: pop .3s ease; }
+@keyframes pop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+
+/* Gallery */
+.g-img { cursor: zoom-in; aspect-ratio: 4/3; object-fit: cover; width: 100%; border-radius: 1rem; background: var(--caramel); transition: transform .25s; }
+.g-img:hover { transform: scale(1.03); }
+
+/* Form + contact */
+.form-control { background-color: var(--card); color: var(--text); }
+.form-floating > label { color: var(--text); opacity: .7; }
+.contact-list li { padding: .45rem 0; }
+.contact-list i { color: var(--caramel); margin-right: .6rem; }
+.map-box { height: 180px; background: repeating-linear-gradient(45deg, var(--card), var(--card) 12px, var(--bg) 12px, var(--bg) 24px); opacity: .9; }
+
+/* Cart */
+.offcanvas { background: var(--bg); color: var(--text); }
+.cart-row { display: flex; align-items: center; gap: .75rem; padding: .7rem 0; border-bottom: 1px solid rgba(198,139,89,.3); }
+.cart-row .qty button { width: 28px; height: 28px; padding: 0; border-radius: 50%; line-height: 1; }
+
+/* Footer + back to top */
+footer { background: var(--espresso); color: var(--cream); }
+footer a { color: var(--cream); margin: 0 .4rem; font-size: 1.2rem; }
+footer a:hover { color: var(--caramel); }
+#toTop { position: fixed; right: 1rem; bottom: 1rem; width: 46px; height: 46px; display: none; z-index: 1030; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .dish-in, .g-img { animation: none; transition: none; }
+}
